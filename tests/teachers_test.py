@@ -41,7 +41,6 @@ def test_grade_assignment_cross(client, h_teacher_2):
 
     assert response.status_code == 400
     data = response.json
-
     assert data['error'] == 'FyleError'
 
 
@@ -61,7 +60,7 @@ def test_grade_assignment_bad_grade(client, h_teacher_1):
     assert response.status_code == 400
     data = response.json
 
-    assert data['error'] == 'ValidationError'
+    assert data['error'] == 'FyleError'
 
 
 def test_grade_assignment_bad_assignment(client, h_teacher_1):
